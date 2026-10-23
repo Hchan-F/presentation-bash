@@ -2,7 +2,7 @@
 clear
 echo "Bienvenue dans le programme !"
 echo "Veuillez entrer votre nom"
-read nom
+read -r nom
 echo "Analyse en cours..."
 sleep 2
 echo "Analyse terminée !"
@@ -16,20 +16,17 @@ else
 echo "Je ne vous connais pas..."
 fi
 
-while true 
-do
 echo "Comment vous sentez-vous aujourd'hui (triste, énervé, bien, heureux) ?"
-read emotion 
+read -r emotion 
 echo "Analyse en cours..."
 sleep 2
 echo "Analyse terminée !"
 if [ "$emotion" = "triste" ]; then
-echo "Puissiez-vous trouver la joie là ou elle se trouve ! "
+echo "J'espère que votre journée s'améliorera ! "
 elif [ "$emotion" = "énervé" ]; then
-echo "Tuer quelqu'un vous apportera davantage de problème que de sérénité !"
+echo "Prendre un moment pour se détendre peut faire du bien !"
 elif [  "$emotion" = "bien" ] || [ "$emotion" = "heureux" ]; then 
 echo "Tout roule pour vous on dirait !"
+else
+echo "Je ne reconnais pas cette émotion."
 fi
- 
-break
-done
